@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Digital Gorpcore Palette */
+  --charcoal-forest: #1A1E1C; /* Negro verdoso profundo */
+  --signal-orange: #FF5A1F;   /* Acento rescate */
+  --soft-sand: #E3DAC9;       /* Secundario técnico */
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-charcoal-forest: var(--charcoal-forest);
+  --color-signal-orange: var(--signal-orange);
+  --color-soft-sand: var(--soft-sand);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--charcoal-forest);
+  color: var(--soft-sand);
+  font-family: var(--font-body);
+  overflow-x: hidden; /* Prevent horizontal scroll from animations initially */
+}
+
+/* Base styles for smooth scrolling if needed, though Lenis handles most */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
