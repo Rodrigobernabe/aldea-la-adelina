@@ -1,16 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  /* Digital Gorpcore Palette */
-  --charcoal-forest: #1A1E1C; /* Negro verdoso profundo */
-  --signal-orange: #FF5A1F;   /* Acento rescate */
-  --soft-sand: #E3DAC9;       /* Secundario técnico */
+  /* Digital Gorpcore Palette - Updated */
+  --charcoal-forest: #262629;
+  /* Dark Grey/Black from palette */
+  --forest-green: #1A4139;
+  /* Deep Green from palette */
+  --signal-orange: #C59A4A;
+  /* Gold/Tan Accent from palette (replacing orange) */
+  --soft-sand: #FFFFF7;
+  /* Off-white/Cream from palette */
+  --earth-brown: #8E6D34;
+  /* Brown from palette */
 }
 
 @theme inline {
   --color-charcoal-forest: var(--charcoal-forest);
+  --color-forest-green: var(--forest-green);
   --color-signal-orange: var(--signal-orange);
   --color-soft-sand: var(--soft-sand);
+  --color-earth-brown: var(--earth-brown);
 
   --font-display: var(--font-display);
   --font-body: var(--font-body);
@@ -20,11 +29,13 @@ body {
   background-color: var(--charcoal-forest);
   color: var(--soft-sand);
   font-family: var(--font-body);
-  overflow-x: hidden; /* Prevent horizontal scroll from animations initially */
+  overflow-x: hidden;
+  /* Prevent horizontal scroll from animations initially */
 }
 
 /* Base styles for smooth scrolling if needed, though Lenis handles most */
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 
