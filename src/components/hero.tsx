@@ -14,22 +14,24 @@ export default function Hero() {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // Cinematic Text Animation
-            gsap.fromTo(textRef.current,
-                {
-                    opacity: 0,
-                    filter: "blur(20px)",
-                    letterSpacing: "1em",
-                },
-                {
-                    opacity: 1,
-                    filter: "blur(0px)",
-                    letterSpacing: "0.1em",
-                    duration: 2.5,
-                    ease: "power2.out", // Smooth cinematic ease
-                    delay: 0.5,
-                }
-            );
+            // Cinematic Text Animation - Optimized
+            gsap.set(textRef.current, {
+                autoAlpha: 0,
+                filter: "blur(10px)",
+                letterSpacing: "0.5em",
+                y: 20
+            });
+
+            gsap.to(textRef.current, {
+                autoAlpha: 1,
+                filter: "blur(0px)",
+                letterSpacing: "0.05em", // Slightly less spacing for final
+                y: 0,
+                duration: 2,
+                ease: "power3.out", // More dramatic ease
+                delay: 0.2,
+                // forceful: true // ensure it renders
+            });
 
             // Simple Parallax for Image
             gsap.to(imageRef.current, {
@@ -63,12 +65,15 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-charcoal-forest" />
             </div>
 
-            <h1
-                ref={textRef}
-                className="relative z-10 text-[10vw] md:text-[8vw] leading-none font-body font-bold text-soft-sand tracking-widest text-center uppercase drop-shadow-2xl mix-blend-overlay"
-            >
-                AVENTURA
-            </h1>
+            <div className="relative z-10 flex flex-col items-center">
+                <h1
+                    ref={textRef}
+                    className="text-[8vw] md:text-[6vw] leading-none font-display font-bold text-soft-sand text-center uppercase drop-shadow-2xl mix-blend-overlay"
+                    style={{ willChange: "transform, opacity, filter" }}
+                >
+                    ALDEA LA ADELINA
+                </h1>
+            </div>
 
             <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-soft-sand/80 text-xs font-body tracking-[0.2em] uppercase animate-pulse">
                 Descubre lo Inexplorado

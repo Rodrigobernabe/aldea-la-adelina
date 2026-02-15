@@ -27,7 +27,7 @@ export default function GalleryScroll() {
             const viewportWidth = window.innerWidth;
             const scrollLength = totalWidth - viewportWidth;
 
-            gsap.to(containerRef.current, {
+            const scrollTween = gsap.to(containerRef.current, {
                 x: -scrollLength,
                 ease: "none",
                 scrollTrigger: {
@@ -37,6 +37,24 @@ export default function GalleryScroll() {
                     end: `+=${scrollLength}`,
                 }
             });
+
+            // Animate images inside the container
+            gsap.utils.toArray(".gallery-item").forEach((item: any) => {
+                gsap.to(item, {
+                    filter: "grayscale(0%)",
+                    duration: 0.5,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: item,
+                        containerAnimation: scrollTween,
+                        start: "center 80%", // When the image center hits 80% viewport
+                        end: "center 20%",   // When the image center hits 20% viewport
+                        toggleActions: "play reverse play reverse",
+                        // scrub: true, // Optional: makes it follow scroll exactly
+                    }
+                });
+            });
+
         }, sectionRef);
         return () => ctx.revert();
     }, []);
@@ -50,7 +68,10 @@ export default function GalleryScroll() {
 
             <div ref={containerRef} className="flex gap-10 pl-10 md:pl-24 w-max items-center h-[70vh]">
                 {galleryImages.map((src, i) => (
-                    <div key={i} className="relative w-[80vw] md:w-[60vw] h-full overflow-hidden rounded-lg grayscale hover:grayscale-0 transition-all duration-700">
+                    <div
+                        key={i}
+                        className="gallery-item relative w-[80vw] md:w-[60vw] h-full overflow-hidden rounded-lg grayscale transition-all duration-700 md:hover:grayscale-0"
+                    >
                         <Image
                             src={src}
                             alt={`Gallery Image ${i + 1}`}

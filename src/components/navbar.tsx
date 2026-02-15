@@ -11,14 +11,17 @@ export default function Navbar() {
             </div>
 
             <div className="hidden md:flex gap-8 font-body text-sm uppercase tracking-widest opacity-80">
-                <Link href="/" className="hover:text-signal-orange transition-colors">
+                <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-signal-orange transition-colors">
                     Inicio
-                </Link>
-                <Link href="#explora" className="hover:text-signal-orange transition-colors">
-                    Explora
-                </Link>
+                </button>
                 <Link href="#instalaciones" className="hover:text-signal-orange transition-colors">
                     Instalaciones
+                </Link>
+                <Link href="#planes" className="hover:text-signal-orange transition-colors">
+                    Packs
+                </Link>
+                <Link href="#galeria" className="hover:text-signal-orange transition-colors">
+                    Galería
                 </Link>
                 <Link href="#contacto" className="hover:text-signal-orange transition-colors">
                     Contacto
@@ -29,9 +32,14 @@ export default function Navbar() {
                 <Menu />
             </button>
 
-            <button className="hidden md:block border border-soft-sand/30 rounded-full px-5 py-2 text-xs uppercase tracking-widest hover:bg-signal-orange hover:border-signal-orange transition-all duration-300">
+            <a
+                href="https://wa.me/5492657716981"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden md:block border border-soft-sand/30 rounded-full px-5 py-2 text-xs uppercase tracking-widest hover:bg-signal-orange hover:border-signal-orange transition-all duration-300"
+            >
                 Reservar
-            </button>
+            </a>
         </nav>
     );
 }
