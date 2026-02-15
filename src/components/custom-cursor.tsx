@@ -57,11 +57,11 @@ export default function CustomCursor() {
         <>
             <div
                 ref={cursorRef}
-                className="fixed top-0 left-0 w-2 h-2 bg-soft-sand rounded-full pointer-events-none z-[100] -translate-x-1/2 -translate-y-1/2 mix-blend-difference"
+                className="hidden md:block fixed top-0 left-0 w-2 h-2 bg-soft-sand rounded-full pointer-events-none z-[100] -translate-x-1/2 -translate-y-1/2 mix-blend-difference"
             />
             <div
                 ref={followerRef}
-                className="fixed top-0 left-0 w-8 h-8 border border-soft-sand rounded-full pointer-events-none z-[99] -translate-x-1/2 -translate-y-1/2 mix-blend-difference transition-colors duration-300"
+                className="hidden md:block fixed top-0 left-0 w-8 h-8 border border-soft-sand rounded-full pointer-events-none z-[99] -translate-x-1/2 -translate-y-1/2 mix-blend-difference transition-colors duration-300"
             />
         </>
     );

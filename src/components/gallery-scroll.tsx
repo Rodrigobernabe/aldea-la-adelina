@@ -25,7 +25,8 @@ export default function GalleryScroll() {
 
             const totalWidth = containerRef.current.scrollWidth;
             const viewportWidth = window.innerWidth;
-            const scrollLength = totalWidth - viewportWidth;
+            // Add extra scroll distance to ensure last item clears the viewport/center
+            const scrollLength = totalWidth - viewportWidth + (window.innerWidth < 768 ? 200 : 0);
 
             const scrollTween = gsap.to(containerRef.current, {
                 x: -scrollLength,
@@ -60,7 +61,7 @@ export default function GalleryScroll() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="h-screen bg-soft-sand text-charcoal-forest overflow-hidden relative flex flex-col justify-center">
+        <section ref={sectionRef} className="h-screen w-full bg-soft-sand text-charcoal-forest overflow-hidden relative flex flex-col justify-center">
             <div className="absolute top-10 left-10 md:left-24 z-10 mix-blend-difference text-soft-sand">
                 <h2 className="text-4xl md:text-6xl font-display">GALERÍA</h2>
                 <p className="text-sm font-body uppercase tracking-widest mt-2">Momentos capturados</p>
