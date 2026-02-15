@@ -58,8 +58,8 @@ export default function Hero() {
                 {/* High Quality Hero Image */}
                 <img
                     ref={imageRef}
-                    src="https://images.pexels.com/photos/1166209/pexels-photo-1166209.jpeg?auto=compress&cs=tinysrgb&w=1920"
-                    alt="Lavender field cinematic view"
+                    src="https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                    alt="Atardecer en las sierras"
                     className="w-full h-full object-cover opacity-80"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-charcoal-forest" />
