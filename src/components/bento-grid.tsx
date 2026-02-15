@@ -9,31 +9,38 @@ import { ArrowUpRight } from "lucide-react";
 const activities = [
     {
         id: 1,
-        title: "Hiking",
-        desc: "Senderos Ocultos",
-        img: "https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg?auto=compress&cs=tinysrgb&w=800",
+        title: "Camp Hall",
+        desc: "Salón de Usos Múltiples",
+        img: "https://images.pexels.com/photos/206648/pexels-photo-206648.jpeg?auto=compress&cs=tinysrgb&w=800", // Rustic cabin interior
         cols: "md:col-span-2",
     },
     {
         id: 2,
-        title: "Camping",
-        desc: "Bajo las Estrellas",
-        img: "https://images.pexels.com/photos/1687845/pexels-photo-1687845.jpeg?auto=compress&cs=tinysrgb&w=800",
+        title: "Sanitarios",
+        desc: "Confort Rústico",
+        img: "https://images.pexels.com/photos/7061662/pexels-photo-7061662.jpeg?auto=compress&cs=tinysrgb&w=800", // Bathroom detail
         cols: "md:col-span-1",
     },
     {
         id: 3,
-        title: "Kayaking",
-        desc: "Aguas Bravas",
-        img: "https://images.pexels.com/photos/241044/pexels-photo-241044.jpeg?auto=compress&cs=tinysrgb&w=800",
+        title: "Sector de Juegos",
+        desc: "Diversión en la Naturaleza",
+        img: "https://images.pexels.com/photos/1684187/pexels-photo-1684187.jpeg?auto=compress&cs=tinysrgb&w=800", // Playground/Activity
         cols: "md:col-span-1",
     },
     {
         id: 4,
-        title: "Wildlife",
-        desc: "Fauna Autóctona",
-        img: "https://images.pexels.com/photos/103123/pexels-photo-103123.jpeg?auto=compress&cs=tinysrgb&w=800",
-        cols: "md:col-span-2",
+        title: "Senderos",
+        desc: "Caminos de Montaña",
+        img: "https://images.pexels.com/photos/1576939/pexels-photo-1576939.jpeg?auto=compress&cs=tinysrgb&w=800", // Hiking path
+        cols: "md:col-span-1",
+    },
+    {
+        id: 5,
+        title: "Energía Solar",
+        desc: "Sostenibilidad",
+        img: "https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=800", // Solar/Nature
+        cols: "md:col-span-1",
     },
 ];
 
@@ -58,11 +65,11 @@ export default function BentoGrid() {
     }, []);
 
     return (
-        <section ref={containerRef} className="py-24 px-6 md:px-12 bg-charcoal-forest">
+        <section id="instalaciones" ref={containerRef} className="py-24 px-6 md:px-12 bg-charcoal-forest">
             <div className="max-w-7xl mx-auto mb-16">
-                <h2 className="text-6xl md:text-8xl font-display text-soft-sand mb-4">EXPLORA</h2>
+                <h2 className="text-6xl md:text-8xl font-display text-soft-sand mb-4">INSTALACIONES</h2>
                 <p className="text-soft-sand/60 text-lg md:text-xl max-w-xl font-body">
-                    Descubre actividades diseñadas para reconectar con lo esencial.
+                    Espacios diseñados para tu comodidad en medio de la naturaleza.
                 </p>
             </div>
 

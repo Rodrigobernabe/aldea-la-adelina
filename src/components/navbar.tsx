@@ -11,14 +11,14 @@ export default function Navbar() {
             </div>
 
             <div className="hidden md:flex gap-8 font-body text-sm uppercase tracking-widest opacity-80">
-                <Link href="#cabanas" className="hover:text-signal-orange transition-colors">
-                    Cabañas
+                <Link href="/" className="hover:text-signal-orange transition-colors">
+                    Inicio
                 </Link>
-                <Link href="#actividades" className="hover:text-signal-orange transition-colors">
-                    Actividades
+                <Link href="#explora" className="hover:text-signal-orange transition-colors">
+                    Explora
                 </Link>
-                <Link href="#galeria" className="hover:text-signal-orange transition-colors">
-                    Galería
+                <Link href="#instalaciones" className="hover:text-signal-orange transition-colors">
+                    Instalaciones
                 </Link>
                 <Link href="#contacto" className="hover:text-signal-orange transition-colors">
                     Contacto
