@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Anton, Inter } from "next/font/google"; // Using Anton as a proxy for Tusker/Druk impact
+import { Anton, Inter } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const anton = Anton({
@@ -29,6 +30,7 @@ export default function RootLayout({
         className={`${anton.variable} ${inter.variable} bg-charcoal-forest text-soft-sand antialiased`}
       >
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
